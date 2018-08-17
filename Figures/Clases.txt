@@ -1,0 +1,55 @@
+#https://www.planttext.com/
+
+@startuml
+
+title User Space Driver - Class Diagram
+
+class Driver {
+    +void* base_address;
+    +unsigned int uio_size;
+    +unsigned int* Inputs;
+    +unsigned int* Output;
+    +unsigned int* layerWeigth;
+    +unsigned int* layerBias;
+    +unsigned int* outputWeigth;
+    +unsigned int* outputBias;
+    +unsigned int* input_hw;
+    +unsigned int* output_hw;
+    +int getAddr();
+	+int mapPorts();
+	+unsigned int* assignToPhysical();
+    +DriverN();
+	+~Driver();
+}
+
+class ANNService {
+    +int initModule();
+    +int startOP();
+    +int loadWeigths();
+    +int setInputs();
+    +int getResult();
+    +ANN();
+    +~ANN();
+}
+
+class Controller{
+    -int riverState;
+    +int getRiverState();
+    +int reconfigureFPGA();
+    +int loadConfiguration();
+    +int setInputs();
+    +void riverMonitoring();
+}
+
+class ANN_DAO {
+    -void* persistenceDependency;
+    +ANN_DAO(Persistence);
+    +~ANN_DAO();
+    +int* loadData();
+    +int storeData();
+}
+
+Controller --> ANNService
+Controller --> Driver
+ANNService --> ANN_DAO
+@enduml
