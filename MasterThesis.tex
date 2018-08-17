@@ -78,6 +78,10 @@
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -93,7 +97,7 @@ Pontificia Universidad Javeriana Cali \\ % Your institution for the title page
 \textit{mavalderrama@javerianacali.edu.co} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
-
+\apptocmd{\frame}{}{\justifying}{}
 \begin{document}
 
 \begin{frame}
@@ -121,11 +125,12 @@ Pontificia Universidad Javeriana Cali \\ % Your institution for the title page
 \begin{frame}
 \frametitle{OBJETIVOS}
 \section{Objetivos}
-
+Proponer una plataforma de computación de borde para IoT que proporcione aceleración por hardware y por medio de la  a través de la reconfiguración parcial, adicione funcionalidad de manera dinámica. 
 \begin{enumerate}
-    \item obj 1
-    \item obj 2
-    \item obj 3
+    \item Definición de la plataforma
+    \item Desarrollo de módulo de hardware como IP
+    \item Integración e implementación de los módulos de hardware a la plataforma
+    \item Comparar rendimiento Hardware vs Software
 \end{enumerate}
     
 \end{frame}
@@ -133,106 +138,84 @@ Pontificia Universidad Javeriana Cali \\ % Your institution for the title page
 
 
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{JUSTIFICACIÓN}
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{ALCANCES}
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{RECURSOS}
+\textbf{Hardware}
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\item \href{https://store.digilentinc.com/zybo-zynq-7000-arm-fpga-soc-trainer-board/}{Tarjeta de Desarrollo ZYBO Zynq-7000 ARM/FPGA SoC}:
+  \begin{itemize}
+  \item Xilinx Zynq-7000 AP SoC XC7Z010-1CLG400C
+  \item Dual-core ARM Cortex™-A9 
+  \item 512 MB DDR3 
+  \item 128 MB Quad-SPI Flash 
+  \item 4 GB SD card 
+  \item Onboard USB-JTAG Programming
+  \item 10/100/1000 Ethernet 
+  \item USB OTG 2.0 and USB-UART 
+  \item Analog Devices ADAU1761 SigmaDSP® Stereo, Low Power, 96 kHz, 24-Bit Audio Codec
+  \item Analog Devices ADV7511 High Performance 225 MHz HDMI Transmitter (1080p HDMI, 8-bit VGA, 128x32 OLED)
+  \item PS \& PL I/O expansion (FMC, Pmod, XADC) 
+  \end{itemize}
 \end{itemize}
 \end{frame}
-
 %------------------------------------------------
-
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
+\frametitle{RECURSOS}
+    \textbf{Software}
+    \begin{itemize}
+    \item \href{http://www.xilinx.com/products/design-tools/vivado.html}{Vivado Design Suite 2017.4} \citep{Vivad98}: Programa para síntesis e implementación de hardware a partir de una descripción usando VHDL o Verilog.
+    \item \href{http://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html}{Vivado HLS 2017.4} \citep{Vivad77}: Programa para síntesis de alto nivel a un lenguaje de descripción de hardware (VHDL o Verilog).
+    \item \href{http://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html}{Petalinux SDK 17.4} \citep{PetaL29}.
+    \item \href{http://www.putty.org}{PuTTY}
+    \end{itemize}
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{METODOLOGÍA}
 
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
 \end{frame}
 
 %------------------------------------------------
-
 \begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\frametitle{ELECCIÓN PLATAFORMA}
 
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
 \end{frame}
 
 %------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{DISEÑO}
+
 \end{frame}
 
 %------------------------------------------------
-
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+\frametitle{VALIDACIÓN DEL MODELO}
+
 \end{frame}
 
 %------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
+\frametitle{RESULTADOS}
+
 \end{frame}
 
 %------------------------------------------------
-
 \begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
+\frametitle{CONCLUSIONES}
+
 \end{frame}
+
+%------------------------------------------------
 
 %------------------------------------------------
 
