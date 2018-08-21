@@ -139,18 +139,23 @@ Proponer una plataforma de computación de borde para IoT que proporcione aceler
 
 \begin{frame}
 \frametitle{JUSTIFICACIÓN}
+%El objetivo de la aceleración por hardware es obtener el máximo de rendimiento de cómputo por unidad de tiempo usando circuitos de hardware con altísimos niveles de concurrencia.
+
+Una plataforma de procesamiento de borde equipada con software y hardware especializado \iffalse como el propuesto en este proyecto \fi se encuentra en la capacidad de procesar grandes bloques de datos provenientes de campo, siendo capaz de ajustar, según la necesidad de procesamiento los recursos de hardware con el objetivo de reducir la cantidad de datos enviados a la nube, reducir los volúmenes de almacenamiento, reducir la latencia al actuar directamente sobre el origen de los datos y a su vez facilitar al desarrollador el procesamiento y analítica aplicable a los datos.
 
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-\frametitle{ALCANCES}
+%\begin{frame}
+%\frametitle{ALCANCES}
 
-\end{frame}
+%\end{frame}
 %------------------------------------------------
 \begin{frame}
 \frametitle{RECURSOS}
+\section{Recursos}
 \textbf{Hardware}
+\subsection{Hardware}
 \begin{itemize}
 \item \href{https://store.digilentinc.com/zybo-zynq-7000-arm-fpga-soc-trainer-board/}{Tarjeta de Desarrollo ZYBO Zynq-7000 ARM/FPGA SoC}:
   \begin{itemize}
@@ -158,10 +163,10 @@ Proponer una plataforma de computación de borde para IoT que proporcione aceler
   \item Dual-core ARM Cortex™-A9 
   \item 512 MB DDR3 
   \item 128 MB Quad-SPI Flash 
-  \item 4 GB SD card 
+  \item 16 GB SD card 
   \item Onboard USB-JTAG Programming
-  \item 10/100/1000 Ethernet 
-  \item USB OTG 2.0 and USB-UART 
+  \item 10/100/1000 Ethernet
+  \item USB OTG 2.0 and USB-UART
   \item Analog Devices ADAU1761 SigmaDSP® Stereo, Low Power, 96 kHz, 24-Bit Audio Codec
   \item Analog Devices ADV7511 High Performance 225 MHz HDMI Transmitter (1080p HDMI, 8-bit VGA, 128x32 OLED)
   \item PS \& PL I/O expansion (FMC, Pmod, XADC) 
@@ -170,48 +175,67 @@ Proponer una plataforma de computación de borde para IoT que proporcione aceler
 \end{frame}
 %------------------------------------------------
 \begin{frame}
+\subsection{Software}
 \frametitle{RECURSOS}
     \textbf{Software}
     \begin{itemize}
-    \item \href{http://www.xilinx.com/products/design-tools/vivado.html}{Vivado Design Suite 2017.4} \citep{Vivad98}: Programa para síntesis e implementación de hardware a partir de una descripción usando VHDL o Verilog.
-    \item \href{http://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html}{Vivado HLS 2017.4} \citep{Vivad77}: Programa para síntesis de alto nivel a un lenguaje de descripción de hardware (VHDL o Verilog).
-    \item \href{http://www.xilinx.com/products/design-tools/embedded-software/petalinux-sdk.html}{Petalinux SDK 17.4} \citep{PetaL29}.
-    \item \href{http://www.putty.org}{PuTTY}
+    \item Vivado Design Suite 2017.4
+    \item Vivado HLS 2017.4
+    \item Petalinux SDK 17.4
+    \item PuTTY/SSH Terminal.
     \end{itemize}
 \end{frame}
 %------------------------------------------------
 \begin{frame}
 \frametitle{METODOLOGÍA}
-
+\section{Metodología}
+Se siguió la siguente metodología con el objetivo de obtener un producto de calidad y alto rendimiento.
+\begin{itemize}
+    \item Diseño y desarrollo un prototipo software del acelerador.
+    \item Desarrollo de una estrategia de validación, implementación y optimización de los módulos y algoritmos de hardware propuestos.
+    \item Desarrollo de un controlador de hardware capaz de reconfigurar la FPGA según el contexto de ejecución del caso de uso.
+    \item Comparación de rendimiento de la implementación hardware contra la implementación del prototipo basado en software
+    \item Reporte de los resultados obtenidos.
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}
-\frametitle{ELECCIÓN PLATAFORMA}
+%\begin{frame}
+%\frametitle{ELECCIÓN PLATAFORMA}
+%\section{Plataforma}
+%Se realizó un 
 
-\end{frame}
+%\end{frame}
 
 %------------------------------------------------
 \begin{frame}
 \frametitle{DISEÑO}
+\section{Diseño}
+
+\subsection{Hardware}
+
+\subsection{Software}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}
 \frametitle{VALIDACIÓN DEL MODELO}
+\section{Validación del modelo}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}
 \frametitle{RESULTADOS}
+\section{Resultados}
 
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}
 \frametitle{CONCLUSIONES}
+\section{Conclusiones}
 
 \end{frame}
 
