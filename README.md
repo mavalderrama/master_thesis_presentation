@@ -1,2 +1,2 @@
-# Presentation-Master-Thesis
-Presentation of my masters thesis on LATEX
+# Presentation of my masters thesis on LATEX
+
